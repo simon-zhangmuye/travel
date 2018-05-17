@@ -2,7 +2,7 @@
   <div>
     <div class="title">周末去哪儿</div>
     <ul>
-      <li class="item border-bottom" v-for="item of weekendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <div class="item-img-wrapper">
           <img class="item-img" :src="item.imgUrl" />
         </div>
@@ -17,26 +17,11 @@
 <script >
 export default {
   name: 'HomeWeekend',
+  props: {
+    list: Array
+  },
   data () {
     return {
-      weekendList: [
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/source/1505/d1/3070ad726f861b.jpg_r_640x214_39709b85.jpg',
-          title: '霸州茗汤温泉',
-          desc: '阿尔卡迪亚御临泉温泉'
-        }, {
-          id: '0002',
-          imgUrl: 'http://img1.qunarzz.com/sight/source/1505/d1/3070ad726f861b.jpg_r_640x214_39709b85.jpg',
-          title: '霸州茗汤温泉',
-          desc: '阿尔卡迪亚御临泉温泉'
-        }, {
-          id: '0003',
-          imgUrl: 'http://img1.qunarzz.com/sight/source/1505/d1/3070ad726f861b.jpg_r_640x214_39709b85.jpg',
-          title: '霸州茗汤温泉',
-          desc: '阿尔卡迪亚御临泉温泉'
-        }
-      ]
     }
   },
   components: {}
@@ -51,7 +36,7 @@ export default {
   .item-img-wrapper
     overflow: hidden
     height: 0
-    padding-bottom: 37.01%
+    padding-bottom: 37.09%
     .item-img
       width: 100%
   .item-info

@@ -1,7 +1,7 @@
 <template>
     <div>
-      <div class="recommend-title">热销推荐</div>
-      <ul v-for="item of recommendList" :key="item.id">
+      <div class="title">热销推荐</div>
+      <ul v-for="item of list" :key="item.id">
         <li class="item border-bottom">
             <img class="item-img" :src="item.imgUrl" />
           <div class="item-info">
@@ -16,26 +16,11 @@
 <script>
 export default {
   name: 'HomeRecommend',
+  props: {
+    list: Array
+  },
   data () {
     return {
-      recommendList: [
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1510/e1/e1c111149b76d49b90.img.jpg_200x200_66e41130.jpg',
-          title: '霸州茗汤温泉',
-          desc: '阿尔卡迪亚御临泉温泉'
-        }, {
-          id: '0002',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1510/e1/e1c111149b76d49b90.img.jpg_200x200_66e41130.jpg',
-          title: '霸州茗汤温泉',
-          desc: '阿尔卡迪亚御临泉温泉'
-        }, {
-          id: '0003',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1510/e1/e1c111149b76d49b90.img.jpg_200x200_66e41130.jpg',
-          title: '霸州茗汤温泉',
-          desc: '阿尔卡迪亚御临泉温泉'
-        }
-      ]
     }
   },
   components: {}
@@ -43,7 +28,7 @@ export default {
 </script>
 <style lang="stylus" scoped>
   @import '~styles/mixins.styl'
-  .recommend-title
+  .title
     margin-top: .2rem
     line-height: .8rem
     background: #eee
