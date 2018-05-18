@@ -23,7 +23,7 @@ export default {
   props: {
   },
   computed: {
-    ...mapState(['city']),
+    ...mapState(['city'])
   }
 }
 </script>
