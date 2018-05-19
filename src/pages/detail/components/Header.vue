@@ -11,10 +11,10 @@
          v-show="!showAbs"
          :style="opacityStyle"
     >
-      景点详情
       <router-link to="/">
         <div class="iconfont header-fixed-back">&#xe624;</div>
       </router-link>
+      景点详情
     </div>
   </div>
 </template>
@@ -44,10 +44,10 @@ export default {
       }
     }
   },
-  activated () {
+  mounted () {
     window.addEventListener('scroll', this.handleScroll)
   },
-  deactivated () {
+  unmounted () {
     window.removeEventListener('scroll', this.handleScroll)
   }
 }
@@ -69,6 +69,7 @@ export default {
       color: #eee
       font-size: .4rem
   .header-fixed
+    z-index: 2
     position: fixed
     top: 0
     right: 0
